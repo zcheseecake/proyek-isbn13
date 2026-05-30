@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teori Bilangan - ISBN 13 | Matematika Diskrit</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/MathJax.js"></script>
+</head>
+<body>
+
+    <header style="text-align: center; margin-bottom: 30px;">
+        <div class="meta-tag">MATEMATIKA DISKRIT</div>
+        <h1>Teori Bilangan: ISBN-13</h1>
+        
+        <div class="identitas-mahasiswa" style="margin: 15px 0; color: #38bdf8; font-size: 15px; font-weight: 500; line-height: 1.6;">
+            <p>Oleh: <strong>Hafna Putri Alifah</strong> &nbsp; &nbsp; NIM: <strong>2510233</strong></p>
+            <p>Kelas: <strong>2B-PSTI</strong></p>
+        </div>
+
+       
+    </header>
+
+    <main class="wrapper">
+        
+        <section class="card">
+            <h3 class="section-title">Input Kode ISBN-13</h3>
+            
+            <div class="input-group">
+                <label for="isbnInput">Masukkan 13 Digit Angka:</label>
+                <input type="text" id="isbnInput" placeholder="Contoh: 9786028512442" maxlength="13">
+            </div>
+
+            <div class="shortcut-group">
+                <span>Contoh cepat:</span>
+                <button type="button" class="btn-secondary" onclick="setContoh('9786028512442')">Soal 1 (Valid)</button>
+                <button type="button" class="btn-secondary" onclick="setContoh('9789793780542')">Soal 2 (Valid)</button>
+                <button type="button" class="btn-secondary" onclick="setContoh('9786020194486')">Soal 3 (Valid)</button>
+                <button type="button" class="btn-secondary" onclick="setContoh('9786028512440')">Soal 4 (Salah)</button>
+                <button type="button" class="btn-secondary" onclick="setContoh('9789793780540')">Soal 5 (Salah)</button>
+            </div>
+
+            <button type="button" class="btn-primary" onclick="hitungISBN()">Hitung ISBN-13 &rarr;</button>
+        </section>
+
+        <section class="card id-hidden" id="sectionVisual">
+            <h3 class="section-title">Visualisasi Perkalian Bobot</h3>
+            <div class="grid-isbn" id="visualGrid">
+                </div>
+        </section>
+
+        <section class="card id-hidden" id="sectionLangkah">
+            <h3 class="section-title">Langkah Perhitungan</h3>
+            <div class="step-list">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-desc">
+                        <strong>Kalikan setiap digit dengan bobot berseling (1 dan 3):</strong>
+                        <p class="math-box" id="langkah1">...</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-desc">
+                        <strong>Hitung total hasil penjumlahan:</strong>
+                        <p class="math-box" id="langkah2">...</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-desc">
+                        <strong>Lakukan operasi Modulo 10 untuk mencari Check Digit:</strong>
+                        <p class="math-box" id="langkah3">...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card id-hidden" id="sectionHasil">
+            <h3 class="section-title">Hasil Akhir & Verifikasi</h3>
+            <div id="badgeHasil" class="badge">VALID</div>
+            
+            <div class="verifikasi-container">
+                <div class="verifikasi-box">
+                    <strong>Kondisi Validasi:</strong>
+                    <p id="txtKondisi">...</p>
+                </div>
+                <div class="verifikasi-box">
+                    <strong>Kesimpulan:</strong>
+                    <p id="txtKesimpulan">...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3 class="section-title">Kode Program Javascript (Logika Inti)</h3>
+            <pre class="code-box"><code>function cekISBN13(isbn) {
+    let total = 0;
+    for (let i = 0; i < 12; i++) {
+        total += parseInt(isbn[i]) * (i % 2 === 0 ? 1 : 3);
+    }
+    let checkDigit = (10 - (total % 10)) % 10;
+    return checkDigit === parseInt(isbn[12]);
+}</code></pre>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

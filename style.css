@@ -1,0 +1,291 @@
+/* ==========================================
+   RESET & VARIABEL UTAMA (TEMA DARK MODE)
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #2a0f22; /* Warna latar belakang gelap semi biru modern */
+    color: #f8fafc; /* Warna teks putih cerah */
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   HEADER DESAIN
+   ========================================== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.meta-tag {
+    display: inline-block;
+    background-color: #1e293b;
+    color: #38bdf8;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border: 1px solid #334155;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.formula-header {
+    color: #94a3b8;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* ==========================================
+   KOMPONEN KARTU (CARD) - MIRIP DI VIDEO
+   ========================================== */
+.card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Kelas khusus untuk menyembunyikan elemen sebelum tombol hitung diklik */
+.id-hidden {
+    display: none;
+}
+
+.section-title {
+    font-size: 18px;
+    color: #cbd5e1;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 8px;
+}
+
+/* ==========================================
+   FORM INPUT & TOMBOL
+   ========================================== */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.input-group input {
+    background-color: #0f172a;
+    border: 2px solid #334155;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #f8fafc;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #38bdf8;
+}
+
+.shortcut-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+button {
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-secondary {
+    background-color: #334155;
+    border: none;
+    color: #cbd5e1;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.btn-secondary:hover {
+    background-color: #475569;
+    color: #fff;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: #0ea5e9;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: #0284c7;
+}
+
+/* ==========================================
+   VISUALISASI BLOK GRID DIGIT
+   ========================================== */
+.grid-isbn {
+    display: flex;
+    gap: 6px;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.digit-block {
+    flex: 1;
+    min-width: 45px;
+    text-align: center;
+}
+
+.block-box {
+    background-color: #0f172a;
+    border: 2px solid #475569;
+    padding: 10px 0;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+/* Sorot untuk digit terakhir (check digit) */
+.digit-block:last-child .block-box {
+    border-color: #e2e8f0;
+    color: #e2e8f0;
+}
+
+.block-weight {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* ==========================================
+   LANGKAH STEP-BY-STEP & HASIL
+   ========================================== */
+.step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.step-item {
+    display: flex;
+    gap: 16px;
+}
+
+.step-number {
+    background-color: #38bdf8;
+    color: #0f172a;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.step-desc {
+    font-size: 14px;
+    color: #e2e8f0;
+    width: 100%;
+}
+
+.math-box {
+    background-color: #0f172a;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #cbd5e1;
+    word-break: break-all;
+}
+
+/* HASIL AKHIR BADGE */
+.badge {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.badge-valid {
+    background-color: rgba(22, 163, 74, 0.2);
+    color: #4ade80;
+    border: 1px solid #22c55e;
+}
+
+.badge-invalid {
+    background-color: rgba(220, 38, 38, 0.2);
+    color: #f87171;
+    border: 1px solid #ef4444;
+}
+
+.verifikasi-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.verifikasi-box {
+    background-color: #0f172a;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.verifikasi-box strong {
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* ==========================================
+   CODE DOKUMENTASI BOX
+   ========================================== */
+.code-box {
+    background-color: #0f172a;
+    padding: 16px;
+    border-radius: 8px;
+    color: #38bdf8;
+    font-size: 13px;
+    overflow-x: auto;
+    border: 1px solid #334155;
+}
