@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #2a0f22; /* Warna latar belakang gelap semi biru modern */
+    background-color: #223761; /* Warna latar belakang gelap semi biru modern */
     color: #f8fafc; /* Warna teks putih cerah */
     padding: 40px 20px;
     min-height: 100vh;
@@ -30,8 +30,8 @@ header {
 
 .meta-tag {
     display: inline-block;
-    background-color: #1e293b;
-    color: #38bdf8;
+    background-color: #8e617d;
+    color: #ef38f8;
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 12px;
